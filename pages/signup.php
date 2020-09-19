@@ -8,7 +8,7 @@
 </style>
 
 <section class="login">
-    <div class="loginContainer">
+    <div class="container">
         <h1 class="title">TETRIS UNICHAMPS</h1>
         <h2 class="loginText">CADASTRE-SE</h2>
         <div class="loginInputs">
