@@ -5,7 +5,6 @@
 <html lang="en">
 <head>
 	<title>Tetris Unichamps</title>
-	<!-- <link href="<?php //echo INCLUDE_PATH; ?>styles/all.css" rel="stylesheet"> -->
 	<link href="<?php echo INCLUDE_PATH; ?>styles/index.css" rel="stylesheet">
 	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
 	integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
