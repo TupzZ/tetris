@@ -8,7 +8,6 @@
 </style>
 
 <section class="login">
-    <img src="assets/images/animatedBg.gif" alt="Background" class="bg" />
     <div class="loginContainer">
         <h1 class="title">TETRIS UNICHAMPS</h1>
         <h2 class="loginText">CADASTRE-SE</h2>

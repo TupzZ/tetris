@@ -21,6 +21,7 @@
 	<meta charset="UTF-8">
 </head>
 <body>
+	<img src="assets/images/animatedBg.gif" alt="Background" class="bg" />
 	<?php 
 	$url = $_GET['url'];
 
