@@ -1,3 +1,48 @@
-h1.title img {
+div.containerButton {
+    width: 70%;
+    height: 40vh;
+    min-height: 150px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+div.buttons {
+    width: 100%;
+    border-radius: 13px;
+    padding: 2% 0;
+    cursor: pointer;
+}
+
+div.buttons.play {
+    background: forestgreen;
+}
+
+div.buttons.ranking {
+    background: goldenrod;
+}
+
+div.buttons.signOut {
+    background: crimson;
+}
+
+div a.button {
+    font-family: 'Poppins';
+    font-size: 1.75vw;
     color: white;
+    height: 100%;
+    width: 100%;
+}
+
+a.button img {
+    width: 1.2vw;
 }
