@@ -1,0 +1,28 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+	text-decoration: none;
+}
+
+html,
+body {
+	overflow-x: hidden;
+	height: 100%;
+}
+
+input {
+	border: 0;
+}
+
+img {
+	width: 95%;
+	height: auto;
+}
+
+.center {
+	max-width: 1280px;
+	padding: 0 2%;
+	margin: 0 auto;
+}
