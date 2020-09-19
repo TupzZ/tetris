@@ -20,7 +20,11 @@
             </form>
             <?php
             if(isset($_POST['sub'])){
-
+                if(Panel::verifyLogin($_POST['username'], md5($_POST['pass'])) === 1){
+                    echo '<div class="success"><span>Logado com sucesso!</span></div>';
+                }
+                else
+                    echo '<div class="error"><span>Usuário e/ou senha incorretos!</span></div>';
             }
             ?>
             <p class="signUp">AINDA NÃO É CADASTRADO?<br/>FAÇA SEU CADASTRO <a href="<?php echo INCLUDE_PATH; ?>signup" class="signUpButton">AQUI</a></p>

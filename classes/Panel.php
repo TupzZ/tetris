@@ -55,7 +55,13 @@
 
 		public static function verifyUser($user){
 			$sql = Mysql::prepare("SELECT * FROM `users` WHERE username = ?");
-			$sql->execute(array($user ));
+			$sql->execute(array($user));
+			return $sql->rowCount();
+		}
+
+		public static function verifyLogin($user, $pass){
+			$sql = Mysql::prepare("SELECT * FROM `users` WHERE username = ? AND `password` = ?");
+			$sql->execute(array($user, $pass));
 			return $sql->rowCount();
 		}
 	}
