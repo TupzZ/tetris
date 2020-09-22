@@ -1,6 +1,6 @@
 <?php 
-    /* if(!Panel::logged())
-        header('Location: '.INCLUDE_PATH_PAINEL); */
+    if(!Panel::logged())
+        header('Location: '.INCLUDE_PATH.'login');
 ?>
 
 <style>
@@ -13,7 +13,16 @@
         <div class="containerButton">
             <a href='<?php echo INCLUDE_PATH; ?>play'><button class="buttons play" href="<?php echo INCLUDE_PATH; ?>play" class="button"><img src="<?php echo INCLUDE_PATH; ?>assets\icons\play.svg" />JOGAR</button></a>
             <a href='<?php echo INCLUDE_PATH; ?>ranking'><button class="buttons ranking" href="<?php echo INCLUDE_PATH; ?>ranking" class="button"><img src="<?php echo INCLUDE_PATH; ?>assets\icons\trophy.svg" />RANKING</button></a>
-            <a href='<?php echo INCLUDE_PATH; ?>?signOut'><button class="buttons signOut" href="http://localhost/tetris?logout" class="button"><img src="<?php echo INCLUDE_PATH; ?>assets\icons\signOut.svg" />SAIR</button></a>
+            <form>
+                <button name='signOut' class="buttons signOut" href="http://localhost/tetris?logout" class="button"><img src="<?php echo INCLUDE_PATH; ?>assets\icons\signOut.svg" />SAIR</button>
+            </form>
+            <?php
+            if(isset($_GET['signOut'])){
+                session_destroy();
+                setcookie("username", time()-1);
+                header('Location: '.INCLUDE_PATH.'login');
+            }
+            ?>
         </div>
     </div>
 </section>

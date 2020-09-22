@@ -1,6 +1,6 @@
 <?php 
     if(Panel::logged())
-        header('Location: '.INCLUDE_PATH_PAINEL);
+        header('Location: '.INCLUDE_PATH.'home');
 ?>
 
 <style>
@@ -20,7 +20,9 @@
             <?php
             if(isset($_POST['sub'])){
                 if(Panel::verifyLogin($_POST['username'], md5($_POST['pass'])) === 1){
-                    echo '<div class="success"><span>Logado com sucesso!</span></div>';
+                    $_SESSION['login'] = true;
+                    setcookie("username", $_POST['username'], time()+3600*24*60);
+                    header('Location: '.INCLUDE_PATH.'home');
                 }
                 else
                     echo '<div class="error"><span>Usuário e/ou senha incorretos!</span></div>';
