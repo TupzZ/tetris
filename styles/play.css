@@ -1,0 +1,9 @@
+.info,
+.game,
+.rank {
+    width: 20vw;
+    background-color: #333333;
+    height: 80%;
+    border-radius: 15px;
+    margin-right: 2%;
+}
