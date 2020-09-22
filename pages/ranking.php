@@ -1,6 +1,6 @@
 <?php 
-    /* if(!Panel::logged())
-        header('Location: '.INCLUDE_PATH_PAINEL); */
+    if(!Panel::logged())
+        header('Location: '.INCLUDE_PATH.'login');
 ?>
 
 <style>
