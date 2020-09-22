@@ -70,6 +70,7 @@ div.container {
     background: #222222;
     border-radius: 24px;
     padding: 2% 0 2% 0;
+    max-width: 65vw;
 }
 
 div.container h1,
