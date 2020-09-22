@@ -4,7 +4,7 @@
 ?>
 
 <style>
-    <?php include('styles/ranking.css'); ?>
+    <?php include('styles/ranking.css'); //adição do css da pagina ?>
 </style>
 
 <section class="ranking">

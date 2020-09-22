@@ -4,7 +4,7 @@
 ?>
 
 <style>
-    <?php include('styles/login.css'); ?>
+    <?php include('styles/login.css'); //adição do css da pagina?>
 </style>
 
 <section class="login">

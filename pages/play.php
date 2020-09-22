@@ -1,42 +1,91 @@
 <style>
-    <?php include('styles/play.css'); ?>
+    <?php include('styles/play.css'); //adição do css da pagina?>
 </style>
 
 <section class="play">
     <div class="container">
         <h1 class="title">TETRIS UNICHAMPS</h1>
-        <div class="info">
+		<!-- Informações de jogo -->
+        <div class="info">		
+		<!-- Tempode jogo -->
             <div class="gameTime">
-                <h1>TIME:</h1>
-                <h2>00:30</h2>
+                <h3>TIME:</h1>
+                <h3>00:30</h2>
             </div>
-            <div class="score">
-                <h1>SCORE:</h1>
-                <h2>100</h2>
+		<!-- Pontuação -->
+            <div class="scoreGame">
+                <h3>SCORE:</h1>
+                <h3>100</h2>
             </div>
+		<!-- Mostra peça seguinte -->
             <div class="next">
-                <h1>PRÓXIMA PEÇA:</h1>
-                <h2>100</h2>
+                <h3>PRÓXIMA PEÇA:</h1>
+                <h3>100</h2>
             </div>
         </div>
-        <div class="game"></div>
+		<!-- Jogo -->
+        <div class="game">
+			<img src="<?php echo INCLUDE_PATH;?>assets/images/Tetrix.png"> 
+		</div>
+        
+		
+		<!-- Rank -->
+		
         <div class="rank">
-            <h1>RANK</h1>
-            <div class="toggleRank">
-                <div class="geral">
-                    <h1>RANK GERAL</h1>
-                    <button>SWITCH</button>
+			<h2 class="title">RANKING</h1>
+            <div class="rankTable">
+                <h3 class="rankTitle">GERAL</h3>
+                <div class="scores">
+						<div class="column rank">
+							<h4>Pos.</h4>
+						</div>
+						<div class="column player">
+							<h4>Player</h4>
+						</div>
+						<div class="column score">
+							<h4>Score</h4>
+						</div>
                 </div>
-                <div class="personal">
-                    <h1>RANK GERAL</h1>
-                    <button>SWITCH</button>
+                <div class="scoreTable">
+                	<div class="scores">
+						<div class="column rank">
+							<h4>1</h4>
+						</div>
+						<div class="column player">
+							<h4>TupzZ</h4>
+						</div>
+						<div class="column score">
+							<h4>100</h4>
+						</div>
+                    </div>
                 </div>
             </div>
+                
             <div class="rankTable">
-                <div class="row">
-                    <div class="col">Pos.</div>
-                    <div class="col">Player</div>
-                    <div class="col">Score</div>
+                <h3 class="rankTitle">PLAYER</h3>
+                <div class="scores">
+						<div class="column rank">
+							<h4>Pos.</h4>
+						</div>
+						<div class="column player">
+							<h4>Player</h4>
+						</div>
+						<div class="column score">
+							<h4>Score</h4>
+						</div>
+                </div>
+                <div class="scoreTable">
+                	<div class="scores">
+						<div class="column rank">
+							<h4>1</h4>
+						</div>
+						<div class="column player">
+							<h4>TupzZ</h4>
+						</div>
+						<div class="column score">
+							<h4>100</h4>
+						</div>
+                    </div>
                 </div>
             </div>
         </div>
