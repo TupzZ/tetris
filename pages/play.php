@@ -1,8 +1,3 @@
-<?php 
-    if(!Panel::logged())
-        header('Location: '.INCLUDE_PATH.'login');
-?>
-
 <style>
     <?php include('styles/home.css'); ?>
 </style>
