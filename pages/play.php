@@ -12,17 +12,29 @@
                 <h3>TIME:</h1>
                 <h3>00:30</h2>
             </div>
+		<div class="break"></div>
 		<!-- Pontuação -->
             <div class="scoreGame">
                 <h3>SCORE:</h1>
                 <h3>100</h2>
             </div>
+		<div class="break"></div>
 		<!-- Mostra peça seguinte -->
             <div class="next">
                 <h3>PRÓXIMA PEÇA:</h1>
-                <h3>100</h2>
-            </div>
+                <img src="">
+			</div>
+		<div class="break"></div>
+	<!-- contem botoes utilitarios -->
+			<div class="utility">
+				<h3>Velocidade:</h3>
+				<div>
+					<button class="buttonVelo">+</button>
+					<button class="buttonVelo Selected">-</button>
+				</div>
+			</div>
         </div>
+
 		<!-- Jogo -->
         <div class="game">
 			<img src="<?php echo INCLUDE_PATH;?>assets/images/Tetrix.png"> 

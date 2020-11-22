@@ -34,7 +34,18 @@
 .gameTime h3:last-child,.scoreGame h3:last-child{
 	font-weight:400;
 }
+.utility{
+    display: flex;
+	font-size: 1vw;
+	color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+	font-family: 'Poppins';	
+    width: 100%;
 
+    margin: 2%;
+}
 .rankTable {
     height: 30%;
     width: 100%;
@@ -58,7 +69,14 @@
     font-size: 1.2vw;
     font-weight: 500;
 }
-
+.break{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 5%;
+    padding: 0 3% 3% 3%;
+}
 .scoreTable {
     height: 30vh;
     width: 100%;
@@ -120,4 +138,20 @@
 
 .column.player {
     width: 20%;
+}
+
+.buttonVelo{
+    position: flex;
+	width: 25px;
+	height: 24px;
+	background: #48C664;
+    border-radius: 10px;
+}
+.buttonVelo.Selected{
+    position: flex;
+	width: 25px;
+	height: 24px;;
+    border-radius: 10px;
+	background: #e20000;
+
 }
