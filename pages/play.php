@@ -35,7 +35,7 @@
 				</div>
 				<h3>Velocidade Atual:</h3>
 				<div>
-					<h3 id="level"><h3>
+					<h3 id="level">1x<h3>
 				</div>
 			</div>
         </div>

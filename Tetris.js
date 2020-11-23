@@ -217,7 +217,7 @@ function startGame(){
 	document.getElementById("points").innerHTML = display;
     controlSpeed = 0;
     level = 1;
-    display = "Level: " + level.toString();
+    display = level.toString() + "x";
 	document.getElementById("level").innerHTML = display;
     paused = 0;
     pieceCode = (Math.floor(Math.random()*6)+1);
@@ -480,7 +480,7 @@ function checkRow(){
         controlSpeed += (rowsSequence*10)*rowsSequence;
         if(controlSpeed/200 >= 1){
             level++;
-            var display = level.toString();
+            var display = level.toString() + "x";
             document.getElementById("level").innerHTML = display;        
             gameSpeed =  Math.floor(gameSpeed*0.5);
             controlSpeed -= 200;
