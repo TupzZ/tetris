@@ -19,8 +19,14 @@
             </form>
             <?php
             if(isset($_POST['sub'])){
+<<<<<<< Updated upstream
                 if(Panel::verifyLogin($_POST['username'], md5($_POST['pass'])) === 1){
                     echo '<div class="success"><span>Logado com sucesso!</span></div>';
+=======
+                if(Panel::verifyLogin($_POST['username'], md5($_POST['pass'])) === 1){ //VERIFICAÇÃO DE LOGIN
+                    echo '<div class="success"><span>Logado com sucesso!</span></div>'; 
+					Panel::redirect(INCLUDE_PATH.'home');
+>>>>>>> Stashed changes
                 }
                 else
                     echo '<div class="error"><span>Usuário e/ou senha incorretos!</span></div>';

@@ -3,9 +3,9 @@
 
 	class User{
 
-		public function addUser($username, $pass){
-			$sql = Mysql::prepare("INSERT INTO `users` VALUES (NULL,?, ?)");
-			if($sql->execute(array($username, $pass))){
+		public function addUser($username,$nome,$nascimento,$cpf,$tel,$email, $pass){
+			$sql = Mysql::prepare("INSERT INTO `users` VALUES (NULL,?, ?, ?, ?, ?, ?, ?)");
+			if($sql->execute(array($username,$nome,$nascimento,$cpf,$tel,$email, $pass))){
 				return true;
 			}else{
 				return false;
