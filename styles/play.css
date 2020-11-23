@@ -22,9 +22,9 @@
 	font-family: 'Poppins';
 }
 #Matriz{
-     position: center;
-     margin-top: 20px;
-     box-shadow: 15px 15px 10px #458B74;
+     position: flex;
+     margin: 15px;
+     box-shadow: 15px 15px 15px 15px #205240;
 }
 .next{
 	display: flex;
