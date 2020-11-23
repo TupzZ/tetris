@@ -103,3 +103,7 @@ div.container p a {
     font-weight: 700;
     color: white;
 }
+
+.rotacionar {
+    transform: rotate(180deg);
+}

@@ -457,6 +457,10 @@ function checkRow(){
             }
         }
         if(count == NCOL){ // compara se a linha inteira está preenchida;
+            if (mainPiece.holdedPiece == M)
+            {
+                rotacionar();
+            }
             rowsSequence++;
             for(lin = row; lin < NROW-1; lin++){
                 for(col = 0; col < NCOL; col ++){  // se foi preenchida
@@ -488,6 +492,12 @@ function checkRow(){
             interval = setInterval(tickMovimentation, gameSpeed);
         }
     }
+}
+
+function rotacionar()
+{
+    var rotacionar = document.getElementById('Matriz');
+    rotacionar.classList.add('rotacionar');
 }
 
 function rotatePiece(){
