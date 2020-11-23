@@ -5,39 +5,44 @@
 <section class="play">
     <div class="container">
         <h1 class="title">TETRIS UNICHAMPS</h1>
+
 		<!-- Informações de jogo -->
         <div class="info">		
 		<!-- Tempode jogo -->
             <div class="gameTime">
-                <h3>TIME:</h1>
-                <h3>00:30</h2>
+                <h3 id="time">0</h2>
             </div>
 		<div class="break"></div>
 		<!-- Pontuação -->
             <div class="scoreGame">
-                <h3>SCORE:</h1>
-                <h3>100</h2>
+                <h3 id="points">Pontuação: 0</h3>
+
             </div>
 		<div class="break"></div>
 		<!-- Mostra peça seguinte -->
             <div class="next">
                 <h3>PRÓXIMA PEÇA:</h1>
-                <img src="">
+				<canvas id="next-canvas"></canvas>
 			</div>
 		<div class="break"></div>
 	<!-- contem botoes utilitarios -->
 			<div class="utility">
-				<h3>Velocidade:</h3>
 				<div>
-					<button class="buttonVelo">+</button>
-					<button class="buttonVelo Selected">-</button>
+					<button id="button" class="buttonPlay Selected"onclick="pauseGame()">Pause game</button>
+				</div>
+				<div>
+					<button id="button2"  class="buttonPlay"  onclick="startGame()">Restart game</button>
+				</div>
+				<h3>Velocidade Atual:</h3>
+				<div>
+					<h3 id="level"><h3>
 				</div>
 			</div>
         </div>
 
 		<!-- Jogo -->
         <div class="game">
-			<img src="<?php echo INCLUDE_PATH;?>assets/images/Tetrix.png"> 
+			<canvas id="Matriz" width="250" height="500"></canvas>
 		</div>
         
 		
@@ -102,4 +107,5 @@
             </div>
         </div>
     </div>
+	<script src="Tetris.js"></script>
 </section>
