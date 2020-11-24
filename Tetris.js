@@ -26,6 +26,8 @@ var pieceCode = (Math.floor(Math.random()*6)+1);
 var seconds=0;
 var checkHoldedPiece = false;
 var activeInstruction = false;
+var actualPiece;
+var rotateElement = document.getElementById('Matriz');
 
 
 
@@ -187,12 +189,15 @@ function drawNextPiece(next){
 }
 
 mainPiece = generatePiece(pieceCode);
+actualPiece = mainPiece;
 pieceCode = (Math.floor(Math.random()*6)+1);
 nextPiece = generatePiece(pieceCode);
 drawNextPiece(nextPiece);
 drawPiece(mainPiece);
 
 function startGame(){
+    if (rotateElement.classList[0] == 'rotacionar')
+        rotateElement.classList.remove('rotacionar');
 	document.getElementById("button2").disabled = true;
     document.getElementById("button2").style.cursor = "not-allowed";
     for (row = 0 ;row < NROW ; row++){ //Gera linhas
@@ -457,7 +462,8 @@ function checkRow(){
             }
         }
         if(count == NCOL){ // compara se a linha inteira está preenchida;
-            if (mainPiece.holdedPiece == M)
+            console.log("Main piece: ", mainPiece,"Actual piece: ", actualPiece,"M: ", M)
+            if (mainPiece.GoTetramino == M[0])
             {
                 rotacionar();
             }
@@ -496,8 +502,10 @@ function checkRow(){
 
 function rotacionar()
 {
-    var rotacionar = document.getElementById('Matriz');
-    rotacionar.classList.add('rotacionar');
+    if (rotateElement.classList[0] == 'rotacionar')
+        rotateElement.classList.remove('rotacionar')
+    else
+        rotateElement.classList.add('rotacionar');
 }
 
 function rotatePiece(){
