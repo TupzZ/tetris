@@ -4,7 +4,7 @@
 ?>
 
 <style>
-    <?php include('styles/ranking.css'); ?>
+    <?php include('styles/ranking.css'); //adição do css da pagina ?>
 </style>
 
 <section class="ranking">
@@ -14,7 +14,7 @@
         <div class="ranks">
             <div class="rankTable">
                 <h3 class="rankTitle">GERAL</h3>
-                <div class="scoreHeader">
+                <div class="scores">
 						<div class="column rank">
 							<h4>Pos.</h4>
 						</div>
@@ -42,7 +42,7 @@
                 
             <div class="rankTable">
                 <h3 class="rankTitle">PLAYER</h3>
-                <div class="scoreHeader">
+                <div class="scores">
 						<div class="column rank">
 							<h4>Pos.</h4>
 						</div>

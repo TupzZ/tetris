@@ -15,7 +15,7 @@
 		<div class="break"></div>
 		<!-- Pontuação -->
             <div class="scoreGame">
-                <h3 id="points"></h1>
+                <h3 id="points">Pontuação: 0</h3>
 
             </div>
 		<div class="break"></div>
@@ -35,16 +35,14 @@
 				</div>
 				<h3>Velocidade Atual:</h3>
 				<div>
-					<h3 id="level"><h3>
+					<h3 id="level">1x<h3>
 				</div>
 			</div>
         </div>
 
 		<!-- Jogo -->
-        <div id="game" class="game">
+        <div class="game">
 			<canvas id="Matriz" width="250" height="500"></canvas>
-			
-			<script src="Tetris.js"></script>
 		</div>
         
 		
@@ -109,4 +107,5 @@
             </div>
         </div>
     </div>
+	<script src="Tetris.js"></script>
 </section>

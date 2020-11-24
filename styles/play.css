@@ -7,45 +7,46 @@
     height: 80%;
     border-radius: 15px;
     margin-right: 2%;
-	
 }
-.rank{
-	margin-right: 0%;
+.rank {
+    margin-right: 0%;
 }
-.gameTime,.scoreGame{
-	display: flex;
-	flex-direction:row;
-	font-size: 2vw;
-	color: white;
-	align-items: center;
-    justify-content: center;
-	font-family: 'Poppins';
-}
-#Matriz{
-     position: center;
-     margin-top: 20px;
-     box-shadow: 15px 15px 10px #458B74;
-}
-.next{
-	display: flex;
-	font-size: 2vw;
-	color: white;
-	align-items: center;
-    justify-content: center;
-	font-family: 'Poppins';	
-	width: 100%;
-}
-.gameTime h3:last-child,.scoreGame h3:last-child{
-	font-weight:400;
-}
-.utility{
+.gameTime,
+.scoreGame {
     display: flex;
-	font-size: 1vw;
-	color: white;
+    flex-direction: row;
+    font-size: 2vw;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins';
+}
+#Matriz {
+    position: flex;
+    margin: 15px;
+    box-shadow: 15px 15px 15px 15px #205240;
+}
+.next {
+    display: flex;
+    font-size: 2vw;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins';
+    width: 100%;
+}
+.gameTime h3:last-child,
+.scoreGame h3:last-child {
+    font-weight: 400;
+}
+.utility {
+    display: flex;
+    font-size: 1vw;
+    color: white;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-	font-family: 'Poppins';	
+    font-family: 'Poppins';
     width: 100%;
 
     margin: 2%;
@@ -73,7 +74,7 @@
     font-size: 1.2vw;
     font-weight: 500;
 }
-.break{
+.break {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -144,17 +145,13 @@
     width: 20%;
 }
 
-.buttonPlay{
+.buttonPlay {
     position: flex;
-	background: #48C664;
+    background: #48c664;
     border-radius: 10px;
 }
-.buttonVelo.Selected{
+.buttonVelo.Selected {
     position: flex;
     border-radius: 10px;
-	background: #e20000;
-
-}
-.rotacionar {
-  transform: rotate(180deg);
+    background: #e20000;
 }

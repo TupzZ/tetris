@@ -92,27 +92,6 @@
     padding-right: 2%;
 }
 
-.scoreHeader {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 98%;
-    border-bottom: 1px solid white;
-    margin-bottom: 4%;
-    padding-bottom: 2%;
-    color: white;
-    font-family: 'Poppins';
-    font-size: 0.8vw;
-    font-weight: 500;
-    padding-right: 2%;
-}
-
 .column {
     display: -webkit-box;
     display: -webkit-flex;

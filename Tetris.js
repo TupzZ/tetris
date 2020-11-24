@@ -26,6 +26,8 @@ var pieceCode = (Math.floor(Math.random()*6)+1);
 var seconds=0;
 var checkHoldedPiece = false;
 var activeInstruction = false;
+var actualPiece;
+var rotateElement = document.getElementById('Matriz');
 
 
 
@@ -139,6 +141,8 @@ function deletePiece(){
 }
 
 function deleteHoldedPiece(next){
+	
+    var hold = document.getElementById('hold-canvas');
     hold.width = 150;
     hold.height = 100;
     var holdedBlocks = hold.getContext("2d");
@@ -167,6 +171,8 @@ function drawPiece(){
 }
 
 function drawNextPiece(next){
+	
+    var nextCanvas = document.getElementById('next-canvas');
     nextCanvas.width = 150;
     nextCanvas.height = 100;
     var nextBlocks = nextCanvas.getContext("2d");
@@ -183,13 +189,17 @@ function drawNextPiece(next){
 }
 
 mainPiece = generatePiece(pieceCode);
+actualPiece = mainPiece;
 pieceCode = (Math.floor(Math.random()*6)+1);
 nextPiece = generatePiece(pieceCode);
 drawNextPiece(nextPiece);
 drawPiece(mainPiece);
 
 function startGame(){
-
+    if (rotateElement.classList[0] == 'rotacionar')
+        rotateElement.classList.remove('rotacionar');
+	document.getElementById("button2").disabled = true;
+    document.getElementById("button2").style.cursor = "not-allowed";
     for (row = 0 ;row < NROW ; row++){ //Gera linhas
         main[row]= [];
         for(col = 0; col < NCOL ;col++){//Gera colunas
@@ -207,12 +217,13 @@ function startGame(){
     drawNextPiece(nextPiece);
     drawPiece(mainPiece);
     rowscount = 0;
-    display = "Eliminated rows: " + rowscount.toString();
     points=0;
-    display = "Points: " + points.toString();
+    display = "Pontuação: " + points.toString();
+	document.getElementById("points").innerHTML = display;
     controlSpeed = 0;
     level = 1;
-    display = "Level: " + level.toString();
+    display = level.toString() + "x";
+	document.getElementById("level").innerHTML = display;
     paused = 0;
     pieceCode = (Math.floor(Math.random()*6)+1);
     seconds=0;
@@ -222,6 +233,8 @@ function startGame(){
 }
 
 function drawHoldedPiece(next){
+	
+    var hold = document.getElementById('hold-canvas');
     hold.width = 150;
     hold.height = 100;
     var holdedBlocks = hold.getContext("2d");
@@ -448,16 +461,12 @@ function checkRow(){
                 count++;
             }
         }
-		// FUNÇÃO QUE NAO SEI SE TA CERTA
-		if((count == NCOL)&& (mainPiece.mainPiece == M)){
-			var rotacionar = document.getElementById('game');        
-
-			function action() {
-				game.classList.toggle('rotacionar');
-			}
-		}
-        else if(count == NCOL){ // compara se a linha inteira está preenchida
-            eliminatedRows();
+        if(count == NCOL){ // compara se a linha inteira está preenchida;
+            console.log("Main piece: ", mainPiece,"Actual piece: ", actualPiece,"M: ", M)
+            if (mainPiece.GoTetramino == M[0])
+            {
+                rotacionar();
+            }
             rowsSequence++;
             for(lin = row; lin < NROW-1; lin++){
                 for(col = 0; col < NCOL; col ++){  // se foi preenchida
@@ -476,24 +485,27 @@ function checkRow(){
     }
     if(rowsSequence > 0){
         points += (rowsSequence*10)*rowsSequence;
-        var display = "Points: " + points.toString();
+        var display = "Pontuação: " + points.toString();
+        document.getElementById("points").innerHTML = display;
         controlSpeed += (rowsSequence*10)*rowsSequence;
         if(controlSpeed/200 >= 1){
-             
-             
-            
-             
-            
             level++;
-            var display = "Level: " + level.toString();    
+            var display = level.toString() + "x";
+            document.getElementById("level").innerHTML = display;        
             gameSpeed =  Math.floor(gameSpeed*0.5);
             controlSpeed -= 200;
             clearInterval(interval);
             interval = setInterval(tickMovimentation, gameSpeed);
-             
-             
         }
     }
+}
+
+function rotacionar()
+{
+    if (rotateElement.classList[0] == 'rotacionar')
+        rotateElement.classList.remove('rotacionar')
+    else
+        rotateElement.classList.add('rotacionar');
 }
 
 function rotatePiece(){
@@ -529,14 +541,6 @@ function gameTime()
     var display = "Time: " + seconds.toString() + " seconds";
     
     return true;
-}
-
-function eliminatedRows(){
-     
-     
-    rowscount++;
-    var display = "Eliminated rows: " + rowscount.toString();
-     
 }
 /*Funcao para o ranking */
 var name;
