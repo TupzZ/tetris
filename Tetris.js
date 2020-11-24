@@ -20,7 +20,7 @@ var nextPiece;
 var rowscount = 0;
 var points=0;
 var controlSpeed = 0;
-var level = 1;
+var veloc = 1;
 var paused = 0;
 var pieceCode = (Math.floor(Math.random()*6)+1);
 var seconds=0;
@@ -199,7 +199,7 @@ function startGame(){
     rowscount = 0;
     points=0;
     controlSpeed = 0;
-    level = 1;
+    veloc = 1;
     paused = 0;
     seconds=0;
     gameState = 0;
@@ -230,7 +230,7 @@ function startGame(){
     document.getElementById("points").innerHTML = display;
     display = "Linhas: " + rowscount.toString();
     document.getElementById("rows").innerHTML = display;
-    display = level.toString() + "x";
+    display = veloc.toString() + "x";
     document.getElementById("level").innerHTML = display;
     
  
@@ -503,8 +503,8 @@ function checkRow(){
         document.getElementById("points").innerHTML = display;
         controlSpeed += (rowsSequence*10)*rowsSequence;
         if(controlSpeed/200 >= 1){
-            level++;
-            var display = level.toString() + "x";
+            veloc++;
+            var display = veloc.toString() + "x";
             document.getElementById("level").innerHTML = display;        
             gameSpeed =  Math.floor(gameSpeed*0.5);
             controlSpeed -= 200;
@@ -567,7 +567,7 @@ class Pessoa {
     constructor() {
         this.name = setName(name);
         this.points = points;
-        this.level = level;
+        this.veloc = veloc;
         this.time = seconds;
     }
 };
