@@ -579,7 +579,9 @@ function setName(){
 }
 
 function generateRanking(){
+    generatePiece.preventDefault();
 	if(confirm("GAMEOVER, deseja reiniciar o jogo?"));{
+        
 		document.location.reload(true);
 	}
     players.push (new Pessoa());
@@ -591,6 +593,7 @@ function generateRanking(){
     });
     
     con.connect(function(err) {
+
         if (err) throw err;
         console.log("Connected!");
         var sql = "INSERT INTO `score` VALUES (NULL,?, ?)";
