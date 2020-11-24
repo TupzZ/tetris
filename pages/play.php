@@ -19,6 +19,12 @@
 
             </div>
 		<div class="break"></div>
+			<!-- Pontuação -->
+            <div class="scoreGame">
+                <h3 id="rows">Linhas:  0</h3>
+
+            </div>
+		<div class="break"></div>
 		<!-- Mostra peça seguinte -->
             <div class="next">
                 <h3>PRÓXIMA PEÇA:</h1>

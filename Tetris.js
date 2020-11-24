@@ -196,6 +196,14 @@ drawNextPiece(nextPiece);
 drawPiece(mainPiece);
 
 function startGame(){
+    rowscount = 0;
+    points=0;
+    controlSpeed = 0;
+    level = 1;
+    paused = 0;
+    seconds=0;
+    gameState = 0;
+
     if (rotateElement.classList[0] == 'rotacionar')
         rotateElement.classList.remove('rotacionar');
     for (row = 0 ;row < NROW ; row++){ //Gera linhas
@@ -214,20 +222,25 @@ function startGame(){
     }
     drawNextPiece(nextPiece);
     drawPiece(mainPiece);
-    rowscount = 0;
-    points=0;
+
     display = "Pontuação: " + points.toString();
-	document.getElementById("points").innerHTML = display;
-    controlSpeed = 0;
-    level = 1;
+
+
+    display = "Pontuação: " + points.toString()
+    document.getElementById("points").innerHTML = display;
+    display = "Linhas: " + rowscount.toString();
+    document.getElementById("rows").innerHTML = display;
     display = level.toString() + "x";
-	document.getElementById("level").innerHTML = display;
-    paused = 0;
+    document.getElementById("level").innerHTML = display;
+    
+ 
+   
+
+    
     pieceCode = (Math.floor(Math.random()*6)+1);
-    seconds=0;
-    gameState = 0;
-    gameSpeed = 1000;
-    interval = setInterval(tickMovimentation, gameSpeed);
+
+    interval = setInterval(tickMovimentation, 1000);
+    
 }
 
 function drawHoldedPiece(next){
@@ -459,6 +472,10 @@ function checkRow(){
             }
         }
         if(count == NCOL){ // compara se a linha inteira está preenchida;
+
+            rowscount++;
+            var display = "Linhas: " + rowscount.toString();
+            document.getElementById("rows").innerHTML = display;
             console.log("Main piece: ", mainPiece,"Actual piece: ", actualPiece,"M: ", M)
             if (mainPiece.GoTetramino == M[0])
             {
@@ -535,7 +552,8 @@ function gameTime()
     if (seconds%2){
         time =seconds;
     }
-    var display = "Time: " + seconds.toString() + " seconds";
+    var display = "Tempo: " + seconds.toString() + " segundos";
+    document.getElementById("time").innerHTML = display;
     
     return true;
 }
@@ -561,7 +579,10 @@ function setName(){
 }
 
 function generateRanking(){
-    
+	if(confirm("GAMEOVER, deseja reiniciar o jogo?"));{
+		document.location.reload(true);
+	}
+    players.push (new Pessoa());
     var con = mysql.createConnection({
         host: "localhost",
         user: "root",
@@ -578,6 +599,8 @@ function generateRanking(){
         console.log("1 record inserted");
         });
     });
+
+    return false;
 }
 
  
