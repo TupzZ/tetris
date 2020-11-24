@@ -6,8 +6,15 @@
 			return isset($_SESSION['login']) ? true : false;
 		}
 		public static function logout(){
-			session_destroy();
-			header('Location: '.INCLUDE_PATH_PAINEL);
+			if(isset($_SESSION['login'])) {
+				
+				session_destroy();
+				header('Location: '.INCLUDE_PATH_PAINEL);
+				exit();
+			 }
+			 else{
+				header('Location: '.INCLUDE_PATH_PAINEL);
+			 } 
 		}
 
 		public static function insert($arr, $table){

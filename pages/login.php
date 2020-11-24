@@ -1,6 +1,6 @@
 <?php 
     if(Panel::logged())
-        header('Location: '.INCLUDE_PATH_PAINEL);
+    header('Location: '.INCLUDE_PATH_PAINEL);
 ?>
 
 <style>
@@ -20,7 +20,8 @@
             <?php
             if(isset($_POST['sub'])){
                 if(Panel::verifyLogin($_POST['username'], md5($_POST['pass'])) === 1){ //VERIFICAÇÃO DE LOGIN
-                    echo '<div class="success"><span>Logado com sucesso!</span></div>'; 
+                    echo '<div class="success"><span>Logado com sucesso!</span></div>';
+                        $_SESSION['login'] = $_POST['username'];
 					Panel::redirect(INCLUDE_PATH.'home');
                 }
                 else //condição caso o login falhe

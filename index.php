@@ -22,13 +22,17 @@
 <body>
 	<img src="assets/images/animatedBg.gif" alt="Background" class="bg" />
 	<?php 
+	
+	error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
 	$url = $_GET['url'];
 
 	if(!$url){
-		if(Panel::logged())
-			echo 'logged';
-		else
+		if(Panel::logged()){
+			Panel::redirect(INCLUDE_PATH.'home');
+		}
+		else{
 			Panel::redirect(INCLUDE_PATH.'login');
+		}
 	}
 	else if(file_exists('pages/'.$url.'.php'))
 		include('pages/'.$url.'.php');

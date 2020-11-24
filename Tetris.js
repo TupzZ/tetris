@@ -78,7 +78,7 @@ class Piece{
 
 let checkGameOver = () => { 
     if(checkColision(0, 0, mainPiece.GoTetramino)){
-        printData();
+        generateRanking();
         gameState = 1;
         clearInterval(interval);
         return true;
@@ -198,8 +198,6 @@ drawPiece(mainPiece);
 function startGame(){
     if (rotateElement.classList[0] == 'rotacionar')
         rotateElement.classList.remove('rotacionar');
-	document.getElementById("button2").disabled = true;
-    document.getElementById("button2").style.cursor = "not-allowed";
     for (row = 0 ;row < NROW ; row++){ //Gera linhas
         main[row]= [];
         for(col = 0; col < NCOL ;col++){//Gera colunas
@@ -251,8 +249,7 @@ function drawHoldedPiece(next){
 }
 
 function tickMovimentation() { //Função para a movimentação constante da peça
-    if(paused == 1){
-         
+    if(paused == 1){ 
         return false;
     }
     else{
@@ -559,8 +556,28 @@ class Pessoa {
 
 //Funções para setar o valor dos atributos
 function setName(){
-    name =  prompt("Game Over !!! \nRegister to Rank: ");
+    name =  "<?php $_SESSION['login']; ?>";
     return name;
+}
+
+function generateRanking(){
+    
+    var con = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "",
+        database: "tetris"
+    });
+    
+    con.connect(function(err) {
+        if (err) throw err;
+        console.log("Connected!");
+        var sql = "INSERT INTO `score` VALUES (NULL,?, ?)";
+        con.query(sql,Pessoa.name,Pessoa.points, function (err, result) {
+        if (err) throw err;
+        console.log("1 record inserted");
+        });
+    });
 }
 
  
