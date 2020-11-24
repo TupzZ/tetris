@@ -268,7 +268,7 @@ function tickMovimentation() { //Função para a movimentação constante da pe�
     else{
          
         if(checkColision(-1, 0, mainPiece.GoTetramino)){
-            drawPieceOnBoard();
+            drawPecaMatrtiz();
             mainPiece = nextPiece;
             nextPiece = generatePiece((Math.floor(Math.random()*6)+1));
             if(checkGameOver()){
@@ -360,7 +360,7 @@ function arrowMovimentation(arrow){ // funcao de movimentaçao horizontal da pe�
     if(arrow == 38)
     {
         if(checkColision(-1, 0, mainPiece.GoTetramino)){
-            drawPieceOnBoard();
+            drawPecaMatrtiz();
             mainPiece = nextPiece;
             nextPiece = generatePiece((Math.floor(Math.random()*6)+1));
             if(checkGameOver()){
@@ -447,7 +447,7 @@ function checkColision(r, c, futurePiece){
     return false;
 }
 
-function drawPieceOnBoard(){
+function drawPecaMatrtiz(){
     for(row = 0 ; row < mainPiece.GoTetramino.length ; row++){
         for(col = 0 ; col < mainPiece.GoTetramino.length ; col++){
             if(mainPiece.GoTetramino[row][col] == 1){
