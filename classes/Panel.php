@@ -9,11 +9,11 @@
 			if(isset($_SESSION['login'])) {
 				
 				session_destroy();
-				header('Location: '.INCLUDE_PATH_PAINEL);
+				header('Location: '.INCLUDE_PATH);
 				exit();
 			 }
 			 else{
-				header('Location: '.INCLUDE_PATH_PAINEL);
+				header('Location: '.INCLUDE_PATH);
 			 } 
 		}
 

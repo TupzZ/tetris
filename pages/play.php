@@ -1,3 +1,8 @@
+<?php 
+    if(!Panel::logged())
+        header('Location: '.INCLUDE_PATH);
+?>
+
 <style>
     <?php include('styles/play.css'); //adição do css da pagina?>
 </style>

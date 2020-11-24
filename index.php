@@ -24,22 +24,24 @@
 	<?php 
 	
 	error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
-	$url = $_GET['url'];
 	if(isset($_GET['signOut']))
 		Panel::logout();
+	else{
+		$url = $_GET['url'];
 
-	if(!$url){
-		if(Panel::logged()){
-			Panel::redirect(INCLUDE_PATH.'home');
+		if(!$url){
+			if(Panel::logged()){
+				Panel::redirect(INCLUDE_PATH.'home');
+			}
+			else{
+				Panel::redirect(INCLUDE_PATH.'login');
+			}
 		}
-		else{
-			Panel::redirect(INCLUDE_PATH.'login');
-		}
+		else if(file_exists('pages/'.$url.'.php'))
+			include('pages/'.$url.'.php'); 
+		else
+			Panel::redirect(INCLUDE_PATH);
 	}
-	else if(file_exists('pages/'.$url.'.php'))
-		include('pages/'.$url.'.php'); 
-	else
-		Panel::redirect(INCLUDE_PATH);
 	?>
 	<script src="logout.js"></script>
 </body>
