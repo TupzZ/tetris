@@ -42,6 +42,11 @@ CREATE TABLE `score` (
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `nacimento` varchar(255) NOT NULL,
+  `cpf` varchar(255) NOT NULL,
+  `tel` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
