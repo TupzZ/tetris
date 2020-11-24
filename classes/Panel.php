@@ -64,5 +64,18 @@
 			$sql->execute(array($user, $pass));
 			return $sql->rowCount();
 		}
+		public static function rankSelect(){
+			$sql = Mysql::prepare("SELECT score, user_id FROM `scores` order by score desc");
+			$sql->execute();
+			$data = $sql->fetchAll();
+			userIDtoUserName($data['user_id']);
+			
+		}
+		public static function userIDtoUserName($ID){
+			$sql = Mysql::prepare("SELECT username FROM `users` where id = ?");
+			$sql->execute(array($ID));
+			
+			return $sql->fetchAll();
+		}
 	}
 ?>
