@@ -15,7 +15,7 @@ var timePlayed = setInterval(gameTime, 1000);
 var main = []; //MatriL de base
 var gameState = 0;
 var mainPiece;
-var holdedPiece;
+var PecaDaMao;
 var nextPiece;
 var rowscount = 0;
 var points=0;
@@ -24,7 +24,7 @@ var level = 1;
 var paused = 0;
 var pieceCode = (Math.floor(Math.random()*6)+1);
 var seconds=0;
-var checkHoldedPiece = false;
+var checkPecaDaMao = false;
 var activeInstruction = false;
 var actualPiece;
 var rotateElement = document.getElementById('Matriz');
@@ -32,12 +32,12 @@ var rotateElement = document.getElementById('Matriz');
 
 
 //variaveis do hold piece
-var holdedPiece;
+var PecaDaMao;
 var checkHolded=false;
 
 
 //variaveis do hold piece
-var holdedPiece;
+var PecaDaMao;
 var checkHolded=false;
 
 
@@ -140,7 +140,7 @@ function deletePiece(){
     }
 }
 
-function deleteHoldedPiece(next){
+function deletePecaDaMao(next){
 	
     var hold = document.getElementById('hold-canvas');
     hold.width = 150;
@@ -217,8 +217,8 @@ function startGame(){
     mainPiece = generatePiece(pieceCode);
     pieceCode = (Math.floor(Math.random()*6)+1);
     nextPiece = generatePiece(pieceCode);
-    if(checkHoldedPiece == true){
-        deleteHoldedPiece(holdedPiece);
+    if(checkPecaDaMao == true){
+        deletePecaDaMao(PecaDaMao);
     }
     drawNextPiece(nextPiece);
     drawPiece(mainPiece);
@@ -243,7 +243,7 @@ function startGame(){
     
 }
 
-function drawHoldedPiece(next){
+function drawPecaDaMao(next){
 	
     var hold = document.getElementById('hold-canvas');
     hold.width = 150;
@@ -394,23 +394,23 @@ function arrowMovimentation(arrow){ // funcao de movimenta√ßao horizontal da pe√
     }
     else
     if(arrow == 67){
-        if(checkHoldedPiece == true){
-            deleteHoldedPiece(holdedPiece);
+        if(checkPecaDaMao == true){
+            deletePecaDaMao(PecaDaMao);
             deletePiece();
-            mainPiece= holdedPiece;
+            mainPiece= PecaDaMao;
             drawPiece(mainPiece);
-            checkHoldedPiece = false;
+            checkPecaDaMao = false;
         }
         else{
-            holdedPiece = mainPiece;
+            PecaDaMao = mainPiece;
             deletePiece();
-            drawHoldedPiece(holdedPiece);
+            drawPecaDaMao(PecaDaMao);
             mainPiece = nextPiece;
             pieceCode = (Math.floor(Math.random()*6)+1);
             nextPiece = generatePiece(pieceCode);
             drawNextPiece(nextPiece);
             drawPiece(mainPiece);
-            checkHoldedPiece = true;
+            checkPecaDaMao = true;
         }
     }
     else

@@ -150,7 +150,7 @@
     background: #48c664;
     border-radius: 10px;
 }
-.buttonVelo.Selected {
+.buttonPlay.Selected {
     position: flex;
     border-radius: 10px;
     background: #e20000;
