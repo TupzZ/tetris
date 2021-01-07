@@ -26,21 +26,25 @@
 					</div>
 				</div>
 				<div class="scoreTable">
-					<div class="scores">
-					<div class="column rank">
-							<h4>1</h4>
-						</div>
-						<div class="column player">
-							<h4>TupzZ</h4>
-						</div>
-						<div class="column score">
-							<h4>100</h4>
+						<?php
+						$pos = 1;
+						$rankData = Panel::rankSelect();
+						foreach($rankData as $score) {
+						?>
+						<div class="scores">
+							<div class="column rank">
+								<h4><?php echo $pos; $pos++; ?></h4>
+							</div>
+							<div class="column player">
+								<h4><?php echo $score['user']; ?></h4>
+							</div>
+							<div class="column score">
+								<h4><?php echo $score['score']; ?></h4>
+							</div>
 						</div>
 						<?php
-						$rankData = Panel::rankSelect();
-						print_r($rankData);
+						}
 						?>
-					</div>
 				</div>
 			</div>
 		</div>

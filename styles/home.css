@@ -52,6 +52,10 @@ button.buttons.signOut {
     background: crimson;
 }
 
+button.buttons.edit {
+    background: mediumpurple;
+}
+
 button {
     font-family: 'Poppins';
     font-size: 1.75vw;
@@ -64,4 +68,5 @@ button {
 
 button img {
     width: 1.2vw;
+	margin-right: 15px;
 }

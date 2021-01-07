@@ -500,6 +500,8 @@ function checkRow(){
     if(rowsSequence > 0){
         points += (rowsSequence*10)*rowsSequence;
         var display = "Pontuação: " + points.toString();
+		var inputPoints = document.getElementById('pointsInput');
+		inputPoints.value = points;
         document.getElementById("points").innerHTML = display;
         controlSpeed += (rowsSequence*10)*rowsSequence;
         if(controlSpeed/200 >= 1){
@@ -579,6 +581,7 @@ function setName(){
 }
 
 function generateRanking(){
+<<<<<<< Updated upstream
 	if(confirm("GAMEOVER, deseja reiniciar o jogo?"));{
 		document.location.reload(true);
 	}
@@ -594,6 +597,17 @@ function generateRanking(){
 }
 function retornaValor(valor) {
 	document.getElementById("pointsInput").value = points;
+=======
+	retornaValor();
+	var btnSubmit = document.getElementById('submitPoints');
+	btnSubmit.click();	
+  
+    return false;
+>>>>>>> Stashed changes
+}
+function retornaValor() {
+	document.getElementById("pointsInput").value = this.points;
+	
 }
 
  

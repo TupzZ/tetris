@@ -21,15 +21,24 @@
 		<!-- Pontuação -->
             <div class="scoreGame">
                 <h3 id="points">Pontuação: 0</h3>
+<<<<<<< Updated upstream
 				<form>
+=======
+				<form method="post" class="pointsForm">
+>>>>>>> Stashed changes
 
 					<input type="number" name="points" id="pointsInput" value=0>
 
 					<input type="submit" id="submitPoints" name="sub" >
 					<?php
 						if(isset($_POST['sub'])){
+<<<<<<< Updated upstream
 							if(Panel::verifyUser($_POST['username']) === 0){
 								Panel::rankInsert($_POST['username'], $_POST['points']);
+=======
+							if(Panel::verifyUser($_SESSION['login']) !== 0){
+								Panel::rankInsert($_POST['points']);
+>>>>>>> Stashed changes
 							}
 						}
 					?>

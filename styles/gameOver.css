@@ -1,0 +1,25 @@
+h1 {
+	margin-bottom: -100px;
+}
+
+.buttons {
+	width: 60vw;
+	display: flex;
+	justify-content: space-around;
+}
+
+.buttons a {
+	color: white;
+	width: 300px;
+	padding: 40px;
+	border-radius: 15px;
+	outline: none !important;
+}
+
+.buttons a.playAgain {
+	background-color: forestgreen;
+}
+
+.buttons a.menu {
+	background-color: DarkSlateBlue;
+}

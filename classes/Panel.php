@@ -60,6 +60,13 @@
 			die();
 		}
 
+		public static function getUser($username) {
+			$sql = Mysql::prepare("SELECT * FROM `users` WHERE username = ?");
+			$sql->execute(array($username));
+			$userData = $sql->fetchAll();
+			return $userData[0];
+		}
+
 		public static function verifyUser($user){
 			$sql = Mysql::prepare("SELECT * FROM `users` WHERE username = ?");
 			$sql->execute(array($user));
@@ -71,6 +78,7 @@
 			$sql->execute(array($user, $pass));
 			return $sql->rowCount();
 		}
+<<<<<<< Updated upstream
 
 		public static function userIDtoUserName($ID){
 			$sql = Mysql::prepare("SELECT username FROM `users` where id = ?");
@@ -86,10 +94,22 @@
 
 		public static function rankSelect(){
 			$sql = Mysql::prepare("SELECT score, id FROM `score` order by score desc limit 5");
+=======
+		
+		public static function rankInsert($points){
+			$sql = Mysql::prepare("INSERT INTO `score` VALUES (NULL, ?, ?)");
+			if($sql->execute(array($_SESSION['login'], $points))){
+				Panel::redirect(INCLUDE_PATH.'gameOver');
+			} else {
+				return false;
+			}
+		}
+
+		public static function rankSelect(){
+			$sql = Mysql::prepare("SELECT score, user FROM `score` order by score desc limit 5");
+>>>>>>> Stashed changes
 			$sql->execute();
-			$data = $sql->fetchAll();
-			$data['user_id'] = self::userIDtoUserName($data['user_id']);
-			return $data;
+			return $sql->fetchAll();
 		}
 	}
 ?>
