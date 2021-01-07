@@ -24,7 +24,7 @@
             <?php
             if(isset($_POST['sub'])){
                 if(Panel::verifyUser($_POST['username']) === 0){
-                    User::addUser($_POST['username'],$_POST['nome'],$_POST['nascimento'],$_POST['cpf'],$_POST['tel'],$_POST['email'], md5($_POST['pass']));
+                    User::addUser($_POST['username'],$_POST['nome'],$_POST['nascimento'],$_POST['cpf'],$_POST['tel'],$_POST['email'], $_POST['pass']);
                     echo '<div class="success"><span>Usuário cadastrado com sucesso!</span></div>';
                 }
                 else
