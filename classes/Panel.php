@@ -77,9 +77,15 @@
 			$sql->execute(array($ID));			
 			return $sql->fetchAll();
 		}	
+		
+
+		public static function rankInsert($user, $points){
+			$arr = array($user, $points);
+			insert($arr, 'score');
+		}
 
 		public static function rankSelect(){
-			$sql = Mysql::prepare("SELECT score, user_id FROM `score` order by score desc limit 5");
+			$sql = Mysql::prepare("SELECT score, id FROM `score` order by score desc limit 5");
 			$sql->execute();
 			$data = $sql->fetchAll();
 			$data['user_id'] = self::userIDtoUserName($data['user_id']);

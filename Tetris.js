@@ -589,18 +589,11 @@ function generateRanking(){
         password: "",
         database: "tetris"
     });
-    
-    con.connect(function(err) {
-        if (err) throw err;
-        console.log("Connected!");
-        var sql = "INSERT INTO `score` VALUES (NULL,?, ?)";
-        con.query(sql,Pessoa.name,Pessoa.points, function (err, result) {
-        if (err) throw err;
-        console.log("1 record inserted");
-        });
-    });
-
-    return false;
+  
+    return points;
+}
+function retornaValor(valor) {
+	document.getElementById("pointsInput").value = points;
 }
 
  

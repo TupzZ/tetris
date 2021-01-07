@@ -21,6 +21,19 @@
 		<!-- Pontuação -->
             <div class="scoreGame">
                 <h3 id="points">Pontuação: 0</h3>
+				<form>
+
+					<input type="number" name="points" id="pointsInput" value=0>
+
+					<input type="submit" id="submitPoints" name="sub" >
+					<?php
+						if(isset($_POST['sub'])){
+							if(Panel::verifyUser($_POST['username']) === 0){
+								Panel::rankInsert($_POST['username'], $_POST['points']);
+							}
+						}
+					?>
+				</form>
 
             </div>
 		<div class="break"></div>
@@ -43,6 +56,17 @@
 				</div>
 				<div>
 					<button id="button2"  class="buttonPlay"  onclick="startGame()">Restart game</button>
+					<?php
+						if(isset($_POST['sub'])){
+							if(Panel::verifyUser($_POST['username']) === 0){
+								
+								Panel::rankInsert();
+								echo '<div class="success"><span>Usuário cadastrado com sucesso!</span></div>';
+							}
+							else
+								echo '<div class="error"><span>Nome de usuário já cadastrado!</span></div>';
+						}
+					?>
 				</div>
 				<h3>Velocidade Atual:</h3>
 				<div>
